@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3d300"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Home"
+    tools:showIn="@layout/activity_home">
+
+    <!-- Sign Out Button -->
+    <Button
+        android:id="@+id/sign_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp" />
+
+    <!-- ImageView with Logo -->
+    <ImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_below="@id/sign_out_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-100dp"/>
+
+    <!-- Greeting Text View -->
+    <TextView
+        android:id="@+id/greeting_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello [first name]! What would you like to do today?"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:paddingHorizontal="30dp"
+        android:layout_below="@id/logo_image_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-120dp"
+        android:gravity="center_horizontal" />
+
+    <!-- Maps Button -->
+    <Button
+        android:id="@+id/maps_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maps"
+        android:layout_below="@id/greeting_text_view"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentLeft="true" />
+
+    <!-- Posts Button -->
+    <Button
+        android:id="@+id/posts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posts"
+        android:layout_below="@id/maps_button"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentLeft="true" />
+
+    <!-- Find a Spotter Button -->
+    <Button
+        android:id="@+id/find_spotter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spotters"
+        android:layout_below="@id/greeting_text_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true" />
+
+    <!-- Nutrition Button -->
+    <Button
+        android:id="@+id/nutrition_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nutrition"
+        android:layout_below="@id/find_spotter_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentRight="true" />
+
+    <!-- Workout Plans Button -->
+    <Button
+        android:id="@+id/workout_plans_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Workout Plans"
+        android:layout_below="@id/nutrition_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="120dp"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
