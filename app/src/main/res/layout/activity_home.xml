@@ -8,10 +8,10 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:paddingBotgitom="16dp"
+    android:paddingBottom="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Home"
-    tools:showIn="@layout/activity_home">
+    tools:context="com.example.shapeshifter.Home"
+     tools:showIn="@layout/activity_home">
 
     <!-- Sign Out Button -->
     <Button

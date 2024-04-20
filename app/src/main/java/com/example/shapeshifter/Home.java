@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.shapeshifter.data.Map;
 import com.example.shapeshifter.data.UserDbHelper;
 
 public class Home extends AppCompatActivity {
@@ -42,6 +43,16 @@ public class Home extends AppCompatActivity {
 
         // Find the Sign Out button
         Button signOutButton = findViewById(R.id.sign_out_button);
+
+        Button mapsButton = findViewById(R.id.maps_button);
+
+        mapsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Map.class);
+                startActivity(intent);
+            }
+        });
 
 // Set OnClickListener for the Sign Out button
         signOutButton.setOnClickListener(new View.OnClickListener() {
