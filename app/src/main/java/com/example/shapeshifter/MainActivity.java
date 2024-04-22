@@ -1,5 +1,5 @@
 package com.example.shapeshifter;
-package com.example.superfit;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,29 +10,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.util.Log;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-
-import androidx.recyclerview.widget.RecyclerView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.shapeshifter.data.UserContract;
 import com.example.shapeshifter.data.UserDbHelper;
 
-public class MainActivity extends AppCompatActivity implements ExerciseAdapter.OnItemClickListener{
+public class MainActivity extends AppCompatActivity {
 
     // Declare EditText fields for username and password
     private EditText usernameEditText;
     private EditText passwordEditText;
-    private RecyclerView exerciseRecyclerView;
-    private ExerciseAdapter exerciseAdapter;
+    //private RecyclerView exerciseRecyclerView;
+    //private ExerciseAdapter exerciseAdapter;
 
-
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -64,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements ExerciseAdapter.O
         String username = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // Validate input (you may want to add more robust validation)
+        // Validate input
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             Toast.makeText(MainActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
             return;
@@ -112,19 +105,7 @@ public class MainActivity extends AppCompatActivity implements ExerciseAdapter.O
         return false;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // Set the content view to use the activity_main layout
-        setContentView(R.layout.activity_main);
-    }
-
-    /**
-     * Load the exercise description from a raw resource file.
-     *
-     * @param resourceId the ID of the raw resource
-     * @return a string containing the content of the file
-     */
+    /*
     private String loadExerciseDescriptionFromRawResource(int resourceId) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -148,18 +129,17 @@ public class MainActivity extends AppCompatActivity implements ExerciseAdapter.O
         }
         return stringBuilder.toString();
     }
+    */
 
-    /**
-     * Handle click events for the "Go to Exercise" button.
-     *
-     * @param view the View that was clicked
-     */
+    /*
     public void onClickExerciseButton(View view) {
         // Create an Intent to start the ExerciseActivity
         Intent intent = new Intent(this, ExerciseActivity.class);
         startActivity(intent);
     }
+    */
 
+    /*
     @Override
     public void onItemClick(Exercise exercise) {
         // Respond to item clicks in the ExerciseAdapter
@@ -169,18 +149,13 @@ public class MainActivity extends AppCompatActivity implements ExerciseAdapter.O
         intent.putExtra("exercise_description", exercise.getDescription());
         startActivity(intent);
     }
+    */
 
-    /**
-     * Handle click events for the "Go to Diet Plan" button.
-     *
-     * @param view the View that was clicked
-     */
+    /*
     public void onClickGoToDietPlanButton(View view) {
         // Start the DietPlanActivity when the "Diet Plan" button is clicked
         Intent intent = new Intent(this, DietPlanActivity.class);
         startActivity(intent);
     }
-
+    */
 }
-
-

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3d300">
+
+    <!-- Banner at the top -->
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0000FF"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Back Button -->
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btnClearPosts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hide All Posts"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="50mm"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+    <!-- Orange Box -->
+    <RelativeLayout
+        android:id="@+id/postBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banner"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="8mm"
+        android:background="@drawable/orange_box_background">
+
+        <!-- EditText -->
+        <EditText
+            android:id="@+id/etPostContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="top"
+            android:hint="Enter your post here..."
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:maxLines="5"
+            android:maxLength="280"
+            android:padding="16dp"
+            android:textColor="#000000"/>
+
+        <!-- Character Counter and Post Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/etPostContent"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tvCharacterCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/280"
+                android:textColor="@android:color/black"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#ff0000"
+                android:text="Post" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- RecyclerView for Posts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postBox"
+        android:layout_marginTop="16dp"
+        android:background="#0000FF"
+        android:padding="16dp"/>
+
+</RelativeLayout>
