@@ -45,11 +45,20 @@ public class Home extends AppCompatActivity {
         Button signOutButton = findViewById(R.id.sign_out_button);
 
         Button mapsButton = findViewById(R.id.maps_button);
+        Button postsButton = findViewById(R.id.posts_button);
 
         mapsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, Map.class);
+                startActivity(intent);
+            }
+        });
+
+        postsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, PostsActivity.class);
                 startActivity(intent);
             }
         });

@@ -21,11 +21,13 @@ public class MainActivity extends AppCompatActivity {
     // Declare EditText fields for username and password
     private EditText usernameEditText;
     private EditText passwordEditText;
+    //private RecyclerView exerciseRecyclerView;
+    //private ExerciseAdapter exerciseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
         // Find EditText fields
         usernameEditText = findViewById(R.id.usernameEditText);
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         String username = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // Validate input (you may want to add more robust validation)
+        // Validate input
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             Toast.makeText(MainActivity.this, "Please enter username and password", Toast.LENGTH_SHORT).show();
             return;
@@ -102,4 +104,58 @@ public class MainActivity extends AppCompatActivity {
         // Login failed
         return false;
     }
+
+    /*
+    private String loadExerciseDescriptionFromRawResource(int resourceId) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            // Open the resource file as an InputStream
+            InputStream inputStream = getResources().openRawResource(resourceId);
+            // Wrap the InputStream with a BufferedReader for efficiency
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            // Read the file line by line and append to StringBuilder
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append("\n");
+            }
+            // Close the BufferedReader and InputStream to release resources
+            bufferedReader.close();
+            inputStream.close();
+        } catch (IOException e) {
+            // Log an error message if there is a problem reading the file
+            e.printStackTrace();
+            Log.e("ExerciseDescription", "Error reading description file from raw resource: " + resourceId);
+        }
+        return stringBuilder.toString();
+    }
+    */
+
+    /*
+    public void onClickExerciseButton(View view) {
+        // Create an Intent to start the ExerciseActivity
+        Intent intent = new Intent(this, ExerciseActivity.class);
+        startActivity(intent);
+    }
+    */
+
+    /*
+    @Override
+    public void onItemClick(Exercise exercise) {
+        // Respond to item clicks in the ExerciseAdapter
+        // Start ExerciseDetailsActivity, passing it details about the clicked exercise
+        Intent intent = new Intent(this, ExerciseDetailsActivity.class);
+        intent.putExtra("exercise_name", exercise.getName());
+        intent.putExtra("exercise_description", exercise.getDescription());
+        startActivity(intent);
+    }
+    */
+
+    /*
+    public void onClickGoToDietPlanButton(View view) {
+        // Start the DietPlanActivity when the "Diet Plan" button is clicked
+        Intent intent = new Intent(this, DietPlanActivity.class);
+        startActivity(intent);
+    }
+    */
 }

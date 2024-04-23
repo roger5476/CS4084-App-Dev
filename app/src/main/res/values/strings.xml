@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ShapeShifter</string>
+    <string name="diet_plan_details">Your diet plan details here</string>
+    <string name="back_button_description">Back</string>
 
     <string name="map_api_key">AIzaSyC8w32cIAPzkimr0uywDj9giKDoaDIERyo</string>
 </resources>

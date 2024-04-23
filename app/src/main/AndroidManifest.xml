@@ -24,7 +24,9 @@
             android:name=".SuccessActivity"
             android:exported="false" />
 
-        <activity android:name="com.example.shapeshifter.data.Map" />
+        <activity android:name="com.example.shapeshifter.data.Map"
+                    android:exported="true"/>
+        <activity android:name=".PostsActivity"></activity>
 
         <activity
             android:name="com.example.shapeshifter.RegisterActivity"

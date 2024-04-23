@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#ADD8E6"> <!-- Light blue background color -->
+
+    <TextView
+        android:id="@+id/tvPostContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FF0000" /> <!-- Red text color for content -->
+
+    <TextView
+        android:id="@+id/tvPostInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:textColor="#000000" /> <!-- Black text color for info -->
+
+</LinearLayout>
