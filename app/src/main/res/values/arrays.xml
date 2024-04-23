@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_names">
+        <item>Push-up</item>
+        <item>Squats</item>
+        <item>Lunges</item>
+        <!-- Add other exercise names here -->
+    </string-array>
+</resources>
