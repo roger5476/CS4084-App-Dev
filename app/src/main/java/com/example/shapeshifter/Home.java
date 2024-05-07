@@ -63,6 +63,30 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        Button nutritionButton = findViewById(R.id.nutrition_button);
+
+        // Set up click listener for the nutrition_button
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open NutritionActivity when nutrition_button is clicked
+                Intent intent = new Intent(Home.this, NutritionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button workoutPlansButton = findViewById(R.id.workout_plans_button);
+
+        // Set up click listener for the workout_plans_button
+        workoutPlansButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open DietPlanActivity when workout_plans_button is clicked
+                Intent intent = new Intent(Home.this, DietPlanActivity.class);
+                startActivity(intent);
+            }
+        });
+
 // Set OnClickListener for the Sign Out button
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override

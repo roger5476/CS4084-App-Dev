@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f3d300"
+    android:padding="16dp">
+
+    <!-- Breakfast Calories -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Breakfast Calories"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextBreakfast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calories for breakfast"
+        android:inputType="number" />
+
+    <!-- Lunch Calories -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lunch Calories"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextLunch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calories for lunch"
+        android:inputType="number" />
+
+    <!-- Dinner Calories -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dinner Calories"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextDinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calories for dinner"
+        android:inputType="number" />
+
+    <!-- Button to Calculate Total Calories -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Snacks Calories"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextSnacks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calories for snacks"
+        android:inputType="number" />
+
+    <!-- Calories Burned -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calories Burned"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextCaloriesBurned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter calories burned"
+        android:inputType="number" />
+
+    <!-- Button to Calculate Total Calories -->
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate Total Calories"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESET"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button to Navigate Back to Home -->
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:layout_marginTop="16dp" />
+
+    <!-- Display Total Calories -->
+    <TextView
+        android:id="@+id/textViewTotalCalories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>

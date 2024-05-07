@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.shapeshifter.data.UserContract;
 import com.example.shapeshifter.data.UserDbHelper;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -105,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    /*
+
     private String loadExerciseDescriptionFromRawResource(int resourceId) {
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -129,18 +135,18 @@ public class MainActivity extends AppCompatActivity {
         }
         return stringBuilder.toString();
     }
-    */
 
-    /*
+
+
     public void onClickExerciseButton(View view) {
         // Create an Intent to start the ExerciseActivity
         Intent intent = new Intent(this, ExerciseActivity.class);
         startActivity(intent);
     }
-    */
 
-    /*
-    @Override
+
+
+
     public void onItemClick(Exercise exercise) {
         // Respond to item clicks in the ExerciseAdapter
         // Start ExerciseDetailsActivity, passing it details about the clicked exercise
@@ -149,13 +155,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("exercise_description", exercise.getDescription());
         startActivity(intent);
     }
-    */
 
-    /*
+
+
     public void onClickGoToDietPlanButton(View view) {
         // Start the DietPlanActivity when the "Diet Plan" button is clicked
         Intent intent = new Intent(this, DietPlanActivity.class);
         startActivity(intent);
     }
-    */
+
 }
