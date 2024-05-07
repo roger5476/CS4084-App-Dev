@@ -30,10 +30,12 @@ import java.util.List;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
-    private final int FINE_PERMISSION_CODE = 1;
+
     private GoogleMap map;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
+
+    private final int FINE_PERMISSION_CODE = 1;
 
     private SearchView mapSearchView;
 
@@ -46,9 +48,14 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
-
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        getLastLocation();
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_PERMISSION_CODE);
+        } else {
+            // Permissions granted, proceed to load map
+            loadMap();
+        }
 
         mapSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -81,9 +88,16 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
                 return false;
             }
         });
-        mapFragment.getMapAsync(Map.this);
 
 
+
+    }
+
+    private void loadMap(){
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment!=null){
+            mapFragment.getMapAsync(this);
+        }
     }
 
     private void getLastLocation() {
@@ -100,27 +114,39 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
                     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
                     mapFragment.getMapAsync(Map.this);
+
                 }
             }
         });
     }
 
     @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-
+    public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
 
-        LatLng loc = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        map.addMarker(new MarkerOptions().position(loc).title("My Location"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(loc));
+        // Check if location permission is granted
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            // Get last known location
+            fusedLocationProviderClient.getLastLocation()
+                    .addOnSuccessListener(this, location -> {
+                        if (location != null) {
+                            LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+                            map.addMarker(new MarkerOptions().position(currentLatLng).title("My Location"));
+                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f)); // Zoom level 15
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "Location permission is denied, please allow permissions to access.", Toast.LENGTH_SHORT).show();
+        }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == FINE_PERMISSION_CODE){
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                getLastLocation();
+                loadMap();
             }else{
                 Toast.makeText(this, "Location permission is denied, please allow permissions to access.", Toast.LENGTH_SHORT).show();
             }

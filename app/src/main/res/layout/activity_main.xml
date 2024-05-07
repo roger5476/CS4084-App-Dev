@@ -1,27 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#f3d300"
+    tools:context="com.example.shapeshifter.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="312dp"
+        android:layout_height="317dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="354dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/logoImageView"
+        android:background="@color/white"
+        android:hint="Username"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="354dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/usernameEditText"
+        android:background="@color/white"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
-        android:id="@+id/exercise_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Exercise"
-        android:onClick="onClickExerciseButton"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:id="@+id/loginButton"
+        android:layout_width="290dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Login"
+        app:layout_constraintBottom_toTopOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+        app:layout_constraintVertical_bias="0.829" />
 
     <Button
-        android:id="@+id/goToDietPlanButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diet Plan"
-        android:onClick="onClickGoToDietPlanButton"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/exercise_button"
-        android:layout_marginTop="16dp"/>
+        android:id="@+id/registerButton"
+        android:layout_width="290dp"
+        android:layout_height="63dp"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
-</RelativeLayout>
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
